@@ -1,0 +1,22 @@
+[
+    {
+        "id": "men",
+        "name": "Men",
+        "subCategories":[]
+    },
+    {
+        "id": "women",
+        "name": "Women",
+        "subCategories":[]
+    },
+    {
+        "id": "kids",
+        "name": "Kids",
+        "subCategories":[]
+    },
+    {
+        "id": "homeLiving",
+        "name": "Home & Living",
+        "subCategories":[]
+    }
+]
