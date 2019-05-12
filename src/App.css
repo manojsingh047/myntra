@@ -25,6 +25,15 @@ a{
 .App-intro {  
   font-size: large;
 }
+.app-header-box {
+  min-height: 120px;
+}
+
+.app-shopping-items{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
