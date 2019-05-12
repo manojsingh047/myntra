@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-
 class HeaderOption extends Component{
 
     render(){
-        return (<div>I am HeaderOption</div>);
+        return (<div>{this.props.category.name}</div>);
     }
 }
 

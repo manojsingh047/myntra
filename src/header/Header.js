@@ -5,39 +5,48 @@ import HeaderOption from "../header-option/HeaderOption";
 import SearchBox from "../search-box/SearchBox";
 import "./Header.css";
 import headerCat from "../assets/data/headercat.json";
+import headerOptions from "../assets/data/headerOption.json";
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerCategories: headerCat
+      headerCategories: [],
+      headerOptions: []
     };
   }
 
   componentDidMount() {
     this.setState({
-      headerCategories: headerCat
+      headerCategories: headerCat,
+      headerOptions: headerOptions
+    });
+  }
+
+  getHeaderItems(data, Component) {
+    return data.map(element => {
+      return <Component key={element.id} category={element} />;
     });
   }
 
   render() {
-    const headerCategories = this.state.headerCategories.map(element => {
-      console.log(element);
-      return <HeaderCategory key={element.id} category={element} />;
-    });
-
+    const headerCategories = this.getHeaderItems(this.state.headerCategories, HeaderCategory);
+    const headerOptions = this.getHeaderItems(this.state.headerOptions, HeaderOption);
+    
     return (
-      <header >
+      <header>
         <div className="header-box">
           <div className="header-item" id="header-item-logo">
             <Logo />
           </div>
-          <div className="header-item" id="header-item-cat">{headerCategories}</div>
+          <div className="header-item" id="header-item-cat">
+            {headerCategories}
+          </div>
           <div className="header-item" id="header-item-search">
             <SearchBox />
           </div>
           <div className="header-item" id="header-item-option">
-            <HeaderOption />
+            {headerOptions}
           </div>
         </div>
       </header>

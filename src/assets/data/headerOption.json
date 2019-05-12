@@ -1,0 +1,17 @@
+[
+    {
+        "id": "profile",
+        "name": "Profile",
+        "subCategories": []
+    },
+    {
+        "id": "wishlist",
+        "name": "Wishlist",
+        "subCategories": []
+    },
+    {
+        "id": "bag",
+        "name": "Bag",
+        "subCategories": []
+    }
+]
