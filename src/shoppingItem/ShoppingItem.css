@@ -1,9 +1,12 @@
-.shopping-item{
-    height: 250px;
-    width: 170px;
-    padding: 20px;
-    box-shadow: 3px 3px 8px -1px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.shopping-item {
+  /* min-height: 90px; */
+  width: 170px;
+  padding: 40px 20px;
+  box-shadow: 3px 3px 8px -1px rgba(0, 0, 0, 0.2);
+  display: -ms-flexbox;
+  /* display: flex; */
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./header/Header";
-import getShoppingItems from "./assets/data/shoppingItems";
+import ShoppingObj from "./assets/data/shoppingItems";
 import "./App.css";
 import ShoppingItem from "./shoppingItem/ShoppingItem";
 
@@ -8,19 +8,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shoppingItems: []
+      shoppingItems: [],
+      filters: []
     };
   }
 
-  componentDidMount() {
-    getShoppingItems().then(shoppingItems => {
+  setShoppingItem(shoppingItemMeta) {
+    ShoppingObj.getShoppingItems(shoppingItemMeta).then(shoppingItems => {
       this.setState({
         shoppingItems: shoppingItems
       });
     });
   }
 
+  componentDidMount() {
+    console.log(ShoppingObj);
+    this.setShoppingItem(ShoppingObj.SHOPPING_ITEM_META);
+  }
+
   render() {
+    const filters = ShoppingObj.getItemFilters(ShoppingObj.SHOPPING_ITEM_META);
+
     const shoppingItems = this.state.shoppingItems.map(item => {
       return <ShoppingItem key={item.id} item={item} />;
     });
@@ -30,7 +38,10 @@ class App extends Component {
         <div className="app-header-box">
           <Header />
         </div>
-        <div className="app-shopping-items">{shoppingItems}</div>
+        <div className="app-data-box">
+          <div className="app-shopping-filters">Filters</div>
+          <div className="app-shopping-items">{shoppingItems}</div>
+        </div>
       </div>
     );
   }
