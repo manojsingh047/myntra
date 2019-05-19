@@ -36,7 +36,7 @@ function getRandomInt(min, max) {
  * This method is creating dummy shopping items data.
  */
 async function getShoppingItems(shoppingItemMeta) {
-  console.log(shoppingItemMeta);
+  // console.log(shoppingItemMeta);
   let items = [];
   const itemCount = 20;
   for (let i = 0; i < itemCount; i++) {
