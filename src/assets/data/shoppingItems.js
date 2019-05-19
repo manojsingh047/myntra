@@ -1,8 +1,3 @@
-/**
- * This method is creating dummy shopping items data.
- */
-
-
 const SHOPPING_ITEM_META = {
   CATEGORIES : ["tshirts", "jeans", "trousers", "shirts"],
   BRANDS : ["calvin", "tommy", "levis", "nike"],
@@ -13,11 +8,7 @@ const SHOPPING_ITEM_META = {
 
 function getItemFilters(shoppingItemMeta) {
   let filters = [];
-
   Object.keys(shoppingItemMeta).forEach(filterItems => {
-
-    console.log(shoppingItemMeta[filterItems]);
-
     let filterData = shoppingItemMeta[filterItems].map(item => {
       return {
         isSelected : false,
@@ -29,7 +20,6 @@ function getItemFilters(shoppingItemMeta) {
       filterType : filterItems,
       filterData : filterData
     });
-
   });
 
   console.log(filters);
@@ -42,6 +32,10 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+/**
+ * This method is creating dummy shopping items data.
+ */
 async function getShoppingItems(shoppingItemMeta) {
   console.log(shoppingItemMeta);
   let items = [];
