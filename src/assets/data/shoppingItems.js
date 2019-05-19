@@ -22,7 +22,6 @@ function getItemFilters(shoppingItemMeta) {
     });
   });
 
-  console.log(filters);
   return filters;
 
 }
